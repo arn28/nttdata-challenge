@@ -1,25 +1,25 @@
 import axios from 'axios'
 
 const ENDPOINTS = {
-  SWAPI: '',
+  RANDOM_USER: 'https://randomuser.me/api/?results=10',
 }
 
-export const getPeople = async (page: number = 1) => {
-  const response = await axios.get(`${ENDPOINTS.SWAPI}people/?page=${page}`)
-  return response
+export const getPeople = async () => {
+  const { data } = await axios.get(`${ENDPOINTS.RANDOM_USER}`)
+  return data.results
 }
 
-export const getOnePeople = async (id: number) => {
-  const response = await axios.get(`${ENDPOINTS.SWAPI}people/${id}`)
-  return response
-}
+// export const getOnePeople = async (id: number) => {
+//   const response = await axios.get(`${ENDPOINTS.RANDOM_USER}people/${id}`)
+//   return response
+// }
 
-export const getOnePlanet = async (id: number) => {
-  const response = await axios.get(`${ENDPOINTS.SWAPI}planets/${id}`)
-  return response
-}
+// export const getOnePlanet = async (id: number) => {
+//   const response = await axios.get(`${ENDPOINTS.RANDOM_USER}planets/${id}`)
+//   return response
+// }
 
-export const getVehicle = async (id: number) => {
-  const response = await axios.get(`${ENDPOINTS.SWAPI}vehicles/${id}`)
-  return response
-}
+// export const getVehicle = async (id: number) => {
+//   const response = await axios.get(`${ENDPOINTS.RANDOM_USER}vehicles/${id}`)
+//   return response
+// }
