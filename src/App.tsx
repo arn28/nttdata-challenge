@@ -1,22 +1,19 @@
-import { useEffect } from 'react'
 import './App.css'
-import { getPeople } from './services/endpoints'
+import PeopleTable from './components/features/PeopleTable'
 
 function App() {
-  const loadPeople = async () => {
-    try {
-      const people = await getPeople()
-      console.log('🚀 ~ App ~ people:', people)
-    } catch (error) {
-      console.log('🚀 ~ loadPeople ~ error:', error)
-    }
-  }
-
-  useEffect(() => {
-    loadPeople()
-  }, [])
-
-  return <h1 className='text-3xl font-bold underline'>Hello world!</h1>
+  return (
+    <>
+      <h1 className='text-3xl font-bold '>Generated Random People </h1>
+      <div>
+        <p className='my-4'>by Arnold Balabarca</p>
+        <hr />
+      </div>
+      <section>
+        <PeopleTable></PeopleTable>
+      </section>
+    </>
+  )
 }
 
 export default App
